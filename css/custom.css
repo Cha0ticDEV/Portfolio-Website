@@ -1,0 +1,108 @@
+/* =========================================
+   PREMIUM SKILL CARDS
+========================================= */
+
+.skill-card {
+    position: relative;
+    height: 180px;
+    padding: 28px 24px;
+
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Subtle accent line */
+.skill-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    background: #007bff;
+
+    transition: width 0.3s ease;
+}
+
+/* Icon */
+.skill-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 10px;
+
+    background: #f5f7fa;
+    color: #007bff;
+
+    font-size: 22px;
+
+    transition: all 0.3s ease;
+}
+
+/* Skill name */
+.skill-card h5 {
+    margin-bottom: 6px;
+
+    color: #343a40;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Category */
+.skill-card span {
+    color: #8a8f98;
+
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+
+/* Hover */
+.skill-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #dee2e6;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card:hover::before {
+    width: 100%;
+}
+
+.skill-card:hover .skill-icon {
+    background: #007bff;
+    color: #ffffff;
+}
+
+
+/* Mobile */
+@media (max-width: 575px) {
+
+    .skill-card {
+        height: 165px;
+        padding: 22px;
+    }
+
+    .skill-card h5 {
+        font-size: 16px;
+    }
+
+}
