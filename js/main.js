@@ -115,3 +115,43 @@
     
 })(jQuery);
 
+
+
+// =========================================
+// DARK / LIGHT MODE
+// =========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const toggle = document.getElementById("theme-toggle");
+
+    if (!toggle) {
+        console.log("Theme toggle not found");
+        return;
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        toggle.checked = true;
+    } else {
+        document.body.classList.remove("dark-mode");
+        toggle.checked = false;
+    }
+
+    // Change theme
+    toggle.addEventListener("change", function () {
+
+        if (this.checked) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        }
+
+    });
+
+});

@@ -1,6 +1,6 @@
-/* =========================================
+//* =========================================================
    PREMIUM SKILL CARDS
-========================================= */
+   ========================================================= */
 
 .skill-card {
     position: relative;
@@ -19,9 +19,9 @@
     overflow: hidden;
 }
 
-/* Subtle accent line */
 .skill-card::before {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: 0;
@@ -34,7 +34,6 @@
     transition: width 0.3s ease;
 }
 
-/* Icon */
 .skill-icon {
     width: 48px;
     height: 48px;
@@ -55,7 +54,6 @@
     transition: all 0.3s ease;
 }
 
-/* Skill name */
 .skill-card h5 {
     margin-bottom: 6px;
 
@@ -65,7 +63,6 @@
     font-weight: 600;
 }
 
-/* Category */
 .skill-card span {
     color: #8a8f98;
 
@@ -73,8 +70,6 @@
     letter-spacing: 0.3px;
 }
 
-
-/* Hover */
 .skill-card:hover {
     transform: translateY(-6px);
 
@@ -93,7 +88,376 @@
 }
 
 
+/* =========================================================
+   ANDROID STYLE DARK / LIGHT TOGGLE
+   ========================================================= */
+
+.theme-switch {
+    position: relative;
+
+    display: inline-block;
+
+    width: 52px;
+    height: 28px;
+
+    margin-left: 15px;
+
+    vertical-align: middle;
+
+    flex-shrink: 0;
+}
+
+.theme-switch input {
+    position: absolute;
+
+    opacity: 0;
+
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: #d9dee3;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.theme-slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+
+    left: 3px;
+    top: 3px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.3s ease;
+
+    z-index: 2;
+}
+
+
+/* Toggle icons */
+
+.theme-slider i {
+    position: absolute;
+
+    top: 7px;
+
+    font-size: 11px;
+
+    color: #0d0f12;
+
+    z-index: 3;
+
+    transition: opacity 0.3s ease;
+}
+
+.sun-icon {
+    left: 7px;
+    opacity: 0.2;
+}
+
+.moon-icon {
+    right: 7px;
+    opacity: 0.2;
+}
+
+
+/* Dark mode switch ON */
+
+.theme-switch input:checked + .theme-slider {
+    background: #1bc9a3;
+}
+
+.theme-switch input:checked + .theme-slider::before {
+    transform: translateX(24px);
+}
+
+.theme-switch input:checked + .theme-slider .sun-icon {
+    opacity: 0.35;
+}
+
+.theme-switch input:checked + .theme-slider .moon-icon {
+    opacity: 1;
+}
+
+.theme-slider:hover {
+    box-shadow: 0 0 0 3px rgba(27, 201, 163, 0.15);
+}
+
+
+/* =========================================================
+   NAVBAR ALIGNMENT
+   ========================================================= */
+
+.navbar .theme-switch {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    align-self: center;
+}
+
+.navbar .navbar-nav {
+    align-items: center;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Desktop */
+
+@media (min-width: 992px) {
+
+    .navbar .theme-switch {
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+}
+
+
 /* Mobile */
+
+@media (max-width: 991px) {
+
+    .navbar .theme-switch {
+        margin-left: 0;
+        margin-top: 12px;
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE - MAIN PAGE
+   ========================================================= */
+
+body.dark-mode {
+    background-color: #111418 !important;
+    color: #f1f3f5;
+}
+
+
+/* Main sections */
+
+body.dark-mode .container-fluid,
+body.dark-mode section,
+body.dark-mode #about,
+body.dark-mode #qualification,
+body.dark-mode #skill,
+body.dark-mode #service,
+body.dark-mode #portfolio,
+body.dark-mode #contact {
+    background-color: #111418 !important;
+}
+
+
+/* Paragraphs */
+
+body.dark-mode p {
+    color: #aeb4bc;
+}
+
+
+/* Headings */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #f1f3f5;
+}
+
+
+/* =========================================================
+   DARK MODE - SKILL CARDS
+   ========================================================= */
+
+body.dark-mode .skill-card {
+    background: #181c21;
+
+    border-color: #292e35;
+
+    box-shadow: none;
+}
+
+body.dark-mode .skill-card h5 {
+    color: #f1f3f5;
+}
+
+body.dark-mode .skill-card span {
+    color: #aeb4bc;
+}
+
+body.dark-mode .skill-icon {
+    background: #22272e;
+    color: #4da3ff;
+}
+
+body.dark-mode .skill-card:hover {
+    border-color: #343a40;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .skill-card:hover .skill-icon {
+    background: #007bff;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DARK MODE - NAVBAR
+   ========================================================= */
+
+body.dark-mode .navbar-light {
+    background-color: #111418 !important;
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+    color: #e9ecef;
+}
+
+body.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+    color: #1bc9a3;
+}
+
+
+/* =========================================================
+   DARK MODE - LARGE BACKGROUND HEADINGS
+   ABOUT / SKILLS / PROJECTS
+   ========================================================= */
+
+body.dark-mode .display-1.text-white {
+    color: transparent !important;
+
+    -webkit-text-fill-color: transparent !important;
+
+    -webkit-text-stroke: 1px #898a8c !important;
+}
+
+
+/* =========================================================
+   DARK MODE - FORMS
+   ========================================================= */
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #181c21 !important;
+
+    color: #f1f3f5 !important;
+
+    border-color: #292e35 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #7d858f;
+}
+
+
+/* =========================================================
+   DARK MODE - FOOTER
+   ========================================================= */
+
+body.dark-mode footer {
+    background-color: #0d0f12 !important;
+}
+
+
+/* =========================================================
+   FINAL FIX - DARK MODE HERO
+   ========================================================= */
+
+body.dark-mode #home.bg-primary {
+    background-color: #111418 !important;
+}
+
+
+/* Make sure the hero content itself has no teal background */
+body.dark-mode #home .container,
+body.dark-mode #home .row,
+body.dark-mode #home .col-lg-5,
+body.dark-mode #home .col-lg-7 {
+    background-color: transparent !important;
+}
+
+
+/* Tushar Choudhary - transparent inside, white outline */
+body.dark-mode #home h1.display-3 {
+    background: transparent !important;
+    background-color: transparent !important;
+
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-text-stroke: 2px #ffffff !important;
+}
+
+
+/* Keep the other hero text visible */
+body.dark-mode #home h3,
+body.dark-mode #home .typed-text-output {
+    color: #ffffff !important;
+    background: transparent !important;
+}
+
+
+/* Keep buttons transparent */
+body.dark-mode #home .btn {
+    background-color: transparent !important;
+}
+
+/* =========================================================
+   SMOOTH THEME TRANSITIONS
+   ========================================================= */
+
+body,
+.skill-card,
+.skill-icon,
+input,
+textarea,
+select,
+.navbar,
+.container-fluid,
+.theme-slider {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   MOBILE SKILL CARDS
+   ========================================================= */
+
 @media (max-width: 575px) {
 
     .skill-card {
