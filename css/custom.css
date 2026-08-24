@@ -470,3 +470,16 @@ select,
     }
 
 }
+/* =========================================================
+   DARK MODE - MOBILE NAVBAR MENU ICON
+   ========================================================= */
+   @media (max-width: 991px) {
+    body.dark-mode .navbar-light .navbar-toggler {
+        color: #ffffff !important;
+        border-color: transparent !important;
+    }
+
+    body.dark-mode .navbar-light .navbar-toggler-icon {
+        filter: invert(1);
+    }
+}

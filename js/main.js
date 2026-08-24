@@ -155,3 +155,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// =========================================================
+// MOBILE NAVBAR - SMOOTH COLLAPSE
+// =========================================================
+
+// Close mobile navbar after switching theme
+document.getElementById("theme-toggle").addEventListener("change", function () {
+
+    if (window.innerWidth < 992) {
+        closeMobileNavbar();
+    }
+
+});
+
+
+// Close mobile navbar when a navigation link is clicked
+document.querySelectorAll(".navbar-nav .nav-link").forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        if (window.innerWidth < 992) {
+            closeMobileNavbar();
+        }
+
+    });
+
+});
+
+
+// Smoothly close mobile navbar
+function closeMobileNavbar() {
+
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+
+        // Add smooth closing transition
+        navbarCollapse.style.transition = "height 0.35s ease";
+
+        $(navbarCollapse).collapse("hide");
+
+    }
+
+}
