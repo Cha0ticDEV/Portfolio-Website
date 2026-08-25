@@ -117,44 +117,28 @@
 
 
 
-// =========================================
+// =========================================================
 // DARK / LIGHT MODE
-// =========================================
+// =========================================================
 
-document.addEventListener("DOMContentLoaded", function () {
+const themeToggle = document.getElementById("theme-toggle");
 
-    const toggle = document.getElementById("theme-toggle");
+// Always start in light mode
+themeToggle.checked = false;
+document.body.classList.remove("dark-mode");
 
-    if (!toggle) {
-        console.log("Theme toggle not found");
-        return;
-    }
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem("theme");
+// Toggle theme
+themeToggle.addEventListener("change", function () {
 
-    if (savedTheme === "dark") {
+    if (this.checked) {
         document.body.classList.add("dark-mode");
-        toggle.checked = true;
     } else {
         document.body.classList.remove("dark-mode");
-        toggle.checked = false;
     }
 
-    // Change theme
-    toggle.addEventListener("change", function () {
-
-        if (this.checked) {
-            document.body.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
-        } else {
-            document.body.classList.remove("dark-mode");
-            localStorage.setItem("theme", "light");
-        }
-
-    });
-
 });
+
 
 // =========================================================
 // MOBILE NAVBAR - SMOOTH COLLAPSE
